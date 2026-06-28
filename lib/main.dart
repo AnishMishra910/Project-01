@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hello_curio/signup.dart';
+import 'package:hello_curio/splash_screen.dart';
 //import 'ui_helper/util.dart';
 
 void main() {
@@ -18,9 +20,7 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.green,
         ),
       ),
-      home: MyHomePage(
-        title: 'Guff Garum',
-      ),
+      home: SplashScreen(),
     );
   }
 }
@@ -151,7 +151,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextButton(
                     child: Text("Sign Up"),
                     onPressed: () {
-                      print("Fill the form below:");
+                      Navigator.push(context, 
+                      MaterialPageRoute(builder: (context){
+                        return Signup();
+                      })
+                      );
                     },
                   ),
                 ],
