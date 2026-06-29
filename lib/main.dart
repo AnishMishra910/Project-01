@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_curio/home.dart';
 import 'package:hello_curio/signup.dart';
 import 'package:hello_curio/splash_screen.dart';
 //import 'ui_helper/util.dart';
@@ -138,9 +139,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   String email = emailText.text;
                   String password = passwordText.text;
+                  String username = email.split('@')[0];
 
-                  print("Email: $email");
-                  print("Password: $password");
+                  // print("Email: $email");
+                  // print("Password: $password");
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Home(username) 
+                      )
+                      );
                 },
               ),
 
